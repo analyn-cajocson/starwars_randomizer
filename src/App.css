@@ -44,3 +44,11 @@
   padding: 20px;
   font-size: 25px;
 }
+
+.character-img {
+  max-width: 250px;
+}
+
+.affliations-list {
+  list-style-type: none;
+}

@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
 
-class FilmItemRow extends React.Component {
+class AffiliationItemRow extends React.Component {
   render(){
     return(
       <li>
-        <a href={this.props.url}>{this.props.url}</a>
+        {this.props.affiliation}      
       </li>
     )
   }
@@ -19,14 +19,16 @@ class StarWars extends React.Component {
       name: null,
       height: null,
       homeworld: null,
-      films: [],
+      image: null,
+      affiliations: [],
       loadedCharacter: false
     }
   }
 
   getNewCharacter() {
-    const randomNumber = Math.round( Math.random() * 82)
-    const url = `https://swapi.dev/api/people/${randomNumber}/`
+    const randomNumber = Math.round( Math.random() * 88)
+    // const url = `https://swapi.dev/api/people/${randomNumber}/`
+    const url = `https://akabab.github.io/starwars-api/api/id/${randomNumber}.json`
     
     fetch(url)
       .then(response => response.json())
@@ -35,7 +37,8 @@ class StarWars extends React.Component {
           name: data.name,
           height: data.height,
           homeworld: data.homeworld,
-          films: data.films,
+          image: data.image,
+          affiliations: data.affiliations,
           loadedCharacter: true
         })
       })
@@ -44,8 +47,8 @@ class StarWars extends React.Component {
 
   render(){
     
-    const movies = this.state.films.map((url, i) => {
-      return <FilmItemRow key={i} url={url} />
+    const affiliations = this.state.affiliations.map((affiliation, i) => {
+      return <AffiliationItemRow key={i} affiliation={affiliation} />
     })
 
     return(
@@ -53,15 +56,17 @@ class StarWars extends React.Component {
       {
         this.state.loadedCharacter &&
         <div>
-          <h1>{this.state.name}</h1>
-          <p>{this.state.height} cm</p>
+          <img className="character-img" src={this.state.image} alt={this.state.name} />
+          <h1>Name: {this.state.name}</h1>
+          <p>Height: {this.state.height} cm</p>
           <p> <a href={this.state.homeworld}>Homeworld</a></p>
           <div>
-              <ul>
+              <p>Affliations</p>
+              <ul className="affliations-list">
                  {
-                   this.state.films.length > 0 &&
+                   this.state.affiliations.length > 0 &&
                    <div>
-                     {movies}
+                     {affiliations}
                    </div>
                  }
               </ul>
