@@ -59,7 +59,7 @@ class StarWars extends React.Component {
           <img className="character-img" src={this.state.image} alt={this.state.name} />
           <h1>Name: {this.state.name}</h1>
           <p>Height: {this.state.height} cm</p>
-          <p> <a href={this.state.homeworld}>Homeworld</a></p>
+          <p>Homeworld: {this.state.homeworld}</p>
           <div>
               <p>Affliations</p>
               <ul className="affliations-list">
