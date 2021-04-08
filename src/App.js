@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h>StarWars Character Face-off</h>
+        <h1>StarWars Character Face-off</h1>
       </header>
 
       <section className="main-content">

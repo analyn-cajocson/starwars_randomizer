@@ -1,5 +1,5 @@
 import React from 'react';
-import AffiliationItemRow from './AffiliationItemRow'
+import CharacterDetails from './CharacterDetails'
 
 class StarWars extends React.Component {
 
@@ -46,34 +46,16 @@ class StarWars extends React.Component {
   }
 
   render(){
-    
-    const affiliations = this.state.affiliations.map((affiliation, i) => {
-      return <AffiliationItemRow key={i} affiliation={affiliation} />
-    })
-
     return(
       <div className="character-item">
         <h1>{this.props.name}</h1>
       {
         this.state.loadedCharacter &&
-        <div>
-          <img className="character-img" src={this.state.image} alt={this.state.name} />
-          <h2>Name: {this.state.name}</h2>
-          <h3>ID: {this.state.id}</h3>
-          <p>Vote: {this.state.vote}</p>
-          <p>Height: {this.state.height} cm</p>
-          <p>Homeworld: {this.state.homeworld}</p>
-          <div>
-              <p>Affliations</p>
-              <ul className="affliations-list">
-                  {
-                    this.state.affiliations.length > 0 &&
-                    <div>
-                      {affiliations}
-                    </div>
-                  }
-              </ul>
-          </div>
+        <div className="character-details">
+          <CharacterDetails id={this.state.id} name={this.state.name} vote={this.state.vote}
+            height={this.state.height} homeworld={this.state.homeworld}
+            image={this.state.image} affiliations={this.state.affiliations}
+            />
           <div>
             <button type="button" onClick={() => this.upvoteCharacter()} className="btn btn-vote">Vote</button>
           </div>
@@ -85,4 +67,4 @@ class StarWars extends React.Component {
   }
 }
   
-  export default StarWars
+export default StarWars
