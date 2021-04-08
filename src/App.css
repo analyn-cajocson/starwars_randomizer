@@ -47,6 +47,10 @@
   padding: 50px;
 }
 
+.character-details {
+  text-align: center;
+}
+
 .btn {
   background-color: black;
   border: 1px solid yellow;
@@ -65,5 +69,5 @@
 }
 
 .affliations-list {
-  list-style-type: none;
+  text-align: left;
 }
