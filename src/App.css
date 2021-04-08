@@ -15,14 +15,32 @@
 
 .App-header {
   background-color: #282c34;
-  height: 70px;
+  height: 100px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-size: calc(8px + 1vmin);
   color: yellow;
+  padding-left: 30px;
 }
+
+.App-header ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.App-header ul li {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+
+.App-header ul li a {
+  text-decoration: none;
+  color: yellow
+}
+
 
 .App-link {
   color: #61dafb;
