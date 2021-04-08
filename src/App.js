@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <h>StarWars Character Face-off</h>
       </header>
 
       <section className="main-content">
         <div className="character-list">
-          <StarWars />
-          <StarWars />
+          <StarWars name="First Character" />
+          <StarWars name="Second Character" />
         </div>
       </section>
 
