@@ -49,6 +49,7 @@ class StarWars extends React.Component {
     return(
       <div className="character-item">
         <h1>{this.props.name}</h1>
+        <button type="button" onClick={() => this.getNewCharacter()} className="btn">Randomize Character</button>
       {
         this.state.loadedCharacter &&
         <div className="character-details">
@@ -56,12 +57,9 @@ class StarWars extends React.Component {
             height={this.state.height} homeworld={this.state.homeworld}
             image={this.state.image} affiliations={this.state.affiliations}
             />
-          <div>
-            <button type="button" onClick={() => this.upvoteCharacter()} className="btn btn-vote">Vote</button>
-          </div>
+          <button type="button" onClick={() => this.upvoteCharacter()} className="btn btn-vote">Vote</button>
         </div>
       }
-        <button type="button" onClick={() => this.getNewCharacter()} className="btn">Randomize Character</button>
       </div>
     )
   }
