@@ -43,6 +43,11 @@
   color: yellow;
   padding: 20px;
   font-size: 25px;
+  margin: 10px;
+}
+
+.btn-vote {
+  font-size: 15px;
 }
 
 .character-img {
