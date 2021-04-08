@@ -17,14 +17,14 @@ class CharacterDetails extends React.Component {
         <p>Homeworld: {this.props.homeworld}</p>
         <div>
             <p>Affliations</p>
-            <ul className="affliations-list">
+            <ol className="affliations-list">
                 {
                   this.props.affiliations.length > 0 &&
                   <div>
                     {affiliations}
                   </div>
                 }
-            </ul>
+            </ol>
         </div>
       </>
     )
